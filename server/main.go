@@ -8,6 +8,10 @@ import (
 
 const address string = "localhost:8080"
 
+type HealthInfo struct {
+	Healthy   string   `json:"healthy"`
+}
+
 type Author struct {
 	Id        int      `json:"id"`
 	FirstName string   `json:"firstName"`
@@ -35,6 +39,10 @@ var books = []Book {
 	{ Id: 3, AuthorId: 2, Title: "Crime and Punishment", Description: "Book about student in St.Petersburg" },
 }
 
+func getHealth(c *gin.Context) {
+	c.IndentedJSON(http.StatusOK, HealthInfo{Healthy: "true"})
+}
+
 func getBooks(c *gin.Context) {
   c.IndentedJSON(http.StatusOK, books)
 }
@@ -56,6 +64,8 @@ func main() {
   router := gin.Default()
 
 	router.Use(CORSinit)
+
+	router.GET("/health", getHealth)
 
 	router.GET("/books", getBooks)
 	router.GET("/authors", getAuthors)

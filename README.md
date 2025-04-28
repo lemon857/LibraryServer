@@ -1,5 +1,7 @@
 # Library API server
 
+Current API version `/v1`  
+
 Server implement simple RESTful API for get and set information about books and authors
 
 # API
@@ -10,6 +12,7 @@ All ID's generating on server side, when creating new entities field `id` in jso
 
 | Relative address | Method | Value | Description |
 | ---------------- | ------ | ------------ | ----------- |
+| `/health` | `GET` |  | Check ready API server |
 | `/books` | `GET` | Array of `Book` structures | Get list of all books |
 | `/books` | `POST` | `Book` structure, `id` is ignored | Add new book |
 | `/books/:id` | `GET` | `Book` structure | Get info about book with id |
@@ -18,6 +21,12 @@ All ID's generating on server side, when creating new entities field `id` in jso
 | `/authors/:id` | `GET` | `Author` structure | Get info about author with id |
 
 ## JSON structs
+
+### HealthInfo
+
+| Field name | Description |
+| ---------- | ----------- |
+| `healthy` | `true` |
 
 ### Book
 | Field name  | Descripton |
