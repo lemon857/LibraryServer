@@ -6,11 +6,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="Banner">
+    <div class="Banner" id="banner">
       <span> Server is not available now. Please, try again later. </span>
     </div>
 
-    <h1>Page for test GET and POST requests</h1>
-    
+    <h1>Library</h1>
+
+    <div id="book-page" class="BookPage">
+
+    </div>
+
+    <div id="book-list"></div>
+
+    <template id="book-template">
+      <div class="BookInfo">
+        <span>Title:</span>
+        <span id="book-title" class="BookTitle" data-key="title">Empty name</span>
+        <br>
+        <button type="button" data-key="button">Get more info</button>
+      </div>
+    </template>
+
+    <script src="main.js"></script>    
 </body>
 </html>
