@@ -12,8 +12,15 @@
 
     <h1>Library</h1>
 
-    <div id="book-page" class="BookPage">
-
+    <div id="book-plane" class="BookPlane">
+      <span>Title:</span>
+      <span id="book-title">Empty</span>
+      <br>
+      <span>Author:</span>
+      <span id="book-author">Empty</span>
+      <br>
+      <span>Description:</span>
+      <span id="book-description">Empty</span>
     </div>
 
     <div id="book-list"></div>
@@ -21,9 +28,9 @@
     <template id="book-template">
       <div class="BookInfo">
         <span>Title:</span>
-        <span id="book-title" class="BookTitle" data-key="title">Empty name</span>
+        <span id="book-title" class="BookTitle">Empty name</span>
         <br>
-        <button type="button" data-key="button">Get more info</button>
+        <button id="book-button" type="button">Get more info</button>
       </div>
     </template>
 
